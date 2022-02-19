@@ -1,0 +1,58 @@
+@keyframes hoverMenuText {
+}
+@keyframes showFormFixed {
+  from {
+    opacity: 0;
+    top: -520px;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    top: 0;
+  }
+}
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes left-formfixed {
+  from {
+    left: calc(100% - 1.25rem);
+  }
+  to {
+    left: 0;
+  }
+}
+@keyframes focusInputFrom {
+  from {
+    top: 12px;
+  }
+  to {
+    top: 5px;
+  }
+}
+@keyframes showMenuMobille {
+  from {
+    margin-left: -300px;
+  }
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes closeMenuMobille {
+  from {
+    margin-left: 300px;
+  }
+  to {
+    margin-left: -300px;
+  }
+}
