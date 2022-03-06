@@ -1,15 +1,21 @@
-export default function CartItem() {
+import { Link } from "react-router-dom"
+import { pathURLHome } from "../../Router/Path"
+import { Slug } from "../../Slug/Slug"
+
+export default function CartItem({ maSanPham, tenSanPham, giaSanPham, giamGia, giaGoc, hinhAnh, soLuong, onRemove, maGioHang }) {
     return (
         <li className="item_cart_product">
-            <div className="image">
-                <img
-                    src="https://cdn.divineshop.vn/image/catalog/Anh/Grammarly%20Premium%201%20n%C4%83m.png?hash=1623645444"
-                    alt=""
-                />
-            </div>
+            <Link to={pathURLHome.INFORMATION_PRODUCT + '/' + maSanPham + "/" + Slug(tenSanPham)}>
+                <div className="image">
+                    <img
+                        src={hinhAnh}
+                        alt=""
+                    />
+                </div>
+            </Link>
             <div className="rw_cl_text">
                 <h6 className="name_product">
-                    Tài khoản Grammarly Premium 1 năm
+                    {tenSanPham}
                 </h6>
                 <div className="type_product">
                     <a href="">Movie</a>
@@ -33,7 +39,7 @@ export default function CartItem() {
                     </button>
                     <input
                         type="text"
-                        defaultValue={1}
+                        defaultValue={soLuong}
                         className="ipn_product"
                     />
                     <button type="button" className="btn_w rm_product">
@@ -43,14 +49,14 @@ export default function CartItem() {
             </div>
             <div className="price_product">
                 <div className="price">
-                    <h5 className="price_wq">490.000 đ</h5>
+                    <h5 className="price_wq">{giaSanPham}</h5>
                     <div className="price_root_wq">
-                        <div className="sale_q">49%</div>
-                        <div className="price_qw">1.500.000 đ</div>
+                        <div className="sale_q">{giamGia}%</div>
+                        <div className="price_qw">{giaGoc}</div>
                     </div>
                 </div>
                 <div className="rm_pr">
-                    <button type="button" className="remove_pr">
+                    <button type="button" onClick={() => onRemove(maGioHang)} className="remove_pr">
                         <i className="fas fa-trash-alt color_icon" />
                     </button>
                 </div>

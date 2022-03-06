@@ -1,11 +1,19 @@
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import Login from "../Form/Login/Login";
+import SearchFormContainer from '../../Containers/SearchFormContainer';
 import { pathURLHome } from "../Router/Path";
+import InfoUserWeb from './InfoUser/InfoUserWeb';
+import Loginbtn from './Loginbtn/Loginbtn';
+import LoginWeb from './Loginbtn/LoginWeb';
+import HomePageLoginContainer from '../../Containers/HomePageLoginContainer';
 
-export default function Header() {
+
+export default function Header(props) {
     return (
         <>
-            <Login />
+            {
+                props.isLogin ? '' : <HomePageLoginContainer />
+            }
             <div className="header_root">
                 <div className="topbar">
                     <div className="container">
@@ -13,29 +21,29 @@ export default function Header() {
                             <div className="list_left_w item_flex_link">
                                 <li className="item_list">
                                     <i className="fas fa-link color_icon" />
-                                    <a className="text" href="">
+                                    <Link to="" className="text" href="">
                                         Tham gia với chung tôi để trở thành CTV
-                                    </a>
+                                    </Link>
                                 </li>
                             </div>
                             <div className="list_right_w item_flex_link">
                                 <li className="item_list">
                                     <i className="fas fa-book color_icon" />
-                                    <a className="text" href="">
+                                    <Link to="" className="text" href="">
                                         Hướng dẫn mua hàng
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="item_list">
                                     <i className="fas fa-gift color_icon" />
-                                    <a className="text" href="">
+                                    <Link to="" className="text" href="">
                                         Ưu đãi khách hàng
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li className="item_list">
                                     <i className="fas fa-phone-alt color_icon" />
-                                    <a className="text" href="">
+                                    <Link to="" className="text" href="">
                                         Thông tin liên hệ
-                                    </a>
+                                    </Link>
                                 </li>
                             </div>
                         </div>
@@ -45,35 +53,17 @@ export default function Header() {
                     <div className="container">
                         <div className="list_flex_navbar top_list">
                             <div className="menu_mobie_fixed">
-                                <i onclick="showMenu()" className="fas fa-bars color_icon" />
+                                <i onClick={props.onShowMenu} className="fas fa-bars color_icon" />
                                 <div id="mobie_wqp">
                                     <div className="bgrd_wp">
                                         <div className="menu_mobie_lw">
                                             <div className="topbar_menu_mb">
                                                 <div className="flex_lg_nm">
-                                                    <div className="image">
-                                                        {/* <img src="https://ict-imgs.vgcloud.vn/2020/09/01/19/huong-dan-tao-facebook-avatar.jpg"
-                                                  alt=""> */}
-                                                        <img
-                                                            src="https://i.pinimg.com/originals/2d/0f/50/2d0f50e8e4f6b233c7cf70b4bd36f89c.png"
-                                                            alt=""
-                                                        />
-                                                    </div>
-                                                    {/* <div class="col_row_nm">
-                                              <h4 class="name">namdau1102</h4>
-                                              <span class="price_us">Số dư : 0 đ</span>
-                                          </div> */}
-                                                    <div className="col_row_nm">
-                                                        {/* <h4 class="name">namdau1102</h4>
-                                              <span class="price_us">Số dư : 0 đ</span> */}
-                                                        <button className="btn_login_rg" type="submit">
-                                                            Đăng nhập / Đăng kí
-                                                        </button>
-                                                    </div>
+                                                    <Loginbtn onLogin={props.showFromLogin} />
                                                 </div>
                                                 <div className="sw_exit_p">
                                                     <i
-                                                        onclick="showMenu()"
+                                                        onClick={props.onExitMenu}
                                                         className="fas fa-times color_icon"
                                                     />
                                                 </div>
@@ -188,37 +178,14 @@ export default function Header() {
                                 />
                             </Link>
                             <div className="navbar_search_pw">
-                                <div className="search_list_wq_o">
-                                    <input
-                                        className="ipn_text_search"
-                                        type="search"
-                                        name=""
-                                        id=""
-                                        placeholder="Tìm kiếm sản phẩm"
-                                    />
-                                    <div className="list_search_nvb">
-                                        <ul className="root_list_w">
-                                            <li className="item_txt_seach">
-                                                <p className="text">Tài khoản PUBG</p>
-                                                <i className="far fa-trash-alt" />
-                                            </li>
-                                            <li className="item_txt_seach">
-                                                <p className="text">Tài khoản PUBG</p>
-                                                <i className="far fa-trash-alt" />
-                                            </li>
-                                            <li className="item_txt_seach">
-                                                <p className="text">Tài khoản PUBG</p>
-                                                <i className="far fa-trash-alt" />
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <i className="fas fa-search color_icon" />
+                                <SearchFormContainer />
                             </div>
-                            <div className="navbar_user_info_w">
-                                <i className="fas fa-user color_icon" />
-                                <h4 className="text_user">Đăng nhập / Đăng ký</h4>
-                            </div>
+                            {/* {{'-- LOGIN USER --'}} */}
+                            {
+                                props.isLogin
+                                    ? <InfoUserWeb dataUser={props.dataUser.user} onLogout={props.onLogout} />
+                                    : <LoginWeb onLogin={props.showFromLogin} />
+                            }
                             <Link to={pathURLHome.CART}>
                                 <div className="navbar_cart_user">
                                     <i className="fas fa-shopping-cart color_icon" />
@@ -228,26 +195,26 @@ export default function Header() {
                             </Link>
                         </div>
                         <div className=" list_flex_navbar bottom_list">
-                            <a className="navbar_link_iw">
+                            <Link to="" className="navbar_link_iw">
                                 <i className="fas color_icon fa-eye" />
                                 <h4 className="text_item">Sản phẩm bạn vừa xem</h4>
-                            </a>
-                            <a className="navbar_link_iw">
+                            </Link>
+                            <Link to="" className="navbar_link_iw">
                                 <i className="fas color_icon fa-fire" />
                                 <h4 className="text_item">Sản phẩm mua nhiều</h4>
-                            </a>
-                            <a className="navbar_link_iw">
+                            </Link>
+                            <Link to="" className="navbar_link_iw">
                                 <i className="fas color_icon fa-percent" />
                                 <h4 className="text_item">Sản phẩm khuyến mại</h4>
-                            </a>
-                            <a className="navbar_link_iw">
+                            </Link>
+                            <Link to="" className="navbar_link_iw">
                                 <i className="fas color_icon fa-map-marked-alt" />
                                 <h4 className="text_item">Đại lý giao dịch</h4>
-                            </a>
-                            <a className="navbar_link_iw">
+                            </Link>
+                            <Link to="" className="navbar_link_iw">
                                 <i className="far color_icon fa-credit-card" />
                                 <h4 className="text_item">Hình thức thanh toán</h4>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

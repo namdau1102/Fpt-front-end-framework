@@ -1,6 +1,6 @@
-import ItemProduct from "../ItemProduct/ItemProduct";
+import { Link } from "react-router-dom";
+export default function ProductList(props) {
 
-export default function ProductList() {
     return (
         <div className="pw_product_game">
             <div className="wq_text">
@@ -9,9 +9,9 @@ export default function ProductList() {
                         <i className="fas fa-dice-d6" />
                         Sản phẩm nổi bật
                     </h4>
-                    <a href="" className="load_game_w">
+                    <Link to="" className="load_game_w">
                         Khám phá
-                    </a>
+                    </Link>
                 </div>
                 <div className="inner_text_title">
                     <p className="text">
@@ -21,7 +21,7 @@ export default function ProductList() {
             </div>
             <div className="wq_product_game">
                 <ul className="list_product_game_q">
-                    <ItemProduct />
+                    {props.children}
                 </ul>
             </div>
         </div>

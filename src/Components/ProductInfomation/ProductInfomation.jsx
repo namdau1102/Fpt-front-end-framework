@@ -1,15 +1,9 @@
-import MenuTopPage from "../MenuTopPage/MenuTopPage";
-import ChatUserProduct from "./ChatuserProduct/ChatUserProduct";
-import TextInfomationProduct from "./TextInfomationProduct/TextInfomationProduct";
-import TopBarInfomationProduct from "./TopBarInfomationProduct/TopBarInfomationProduct";
-
-export default function ProductInfomation() {
+export default function ProductInfomation(props) {
     return (
         <>
-            <MenuTopPage />
-            <TopBarInfomationProduct />
-            <TextInfomationProduct />
-            <ChatUserProduct />
+            {
+                props.children
+            }
         </>
     )
 }

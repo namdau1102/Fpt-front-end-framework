@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function TopBarMenu() {
     return (
         <div className="flex_mn_fw_inner">
@@ -8,34 +10,34 @@ export default function TopBarMenu() {
                 </span>
                 <div className="primary_menu_image">
                     <li className="menu_item_w">
-                        <a className="item_link" href="">
+                        <Link to="" className="item_link" >
                             <i className="fab fa-internet-explorer" />
                             Thông tin mua dịch
-                        </a>
+                        </Link>
                     </li>
                     <li className="menu_item_w">
-                        <a className="item_link" href="">
+                        <Link to="" className="item_link" >
                             <i className="far color_icon fa-credit-card" />
                             Hướng dẫn thanh toán
-                        </a>
+                        </Link>
                     </li>
                     <li className="menu_item_w">
-                        <a className="item_link" href="">
+                        <Link to="" className="item_link" >
                             <i className="fas fa-dolly" />
                             Chính sách bảo hành
-                        </a>
+                        </Link>
                     </li>
                     <li className="menu_item_w">
-                        <a href="" className="item_link">
+                        <Link to="" className="item_link">
                             <i className="fas fa-share-alt" />
                             Giới thiệu bạn bè
-                        </a>
+                        </Link>
                     </li>
                     <li className="menu_item_w">
-                        <a className="item_link" href="">
+                        <Link to="/" className="item_link" >
                             <i className="far fa-address-book" />
                             Liên hệ hợp tác
-                        </a>
+                        </Link>
                     </li>
                 </div>
             </div>

@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { pathURLHome } from "../../Router/Path";
-
-export default function ItemProduct() {
+import { Slug } from "../../Slug/Slug";
+export default function ItemProduct({ item }) {
     return (
-        <Link to={pathURLHome.INFORMATION_PRODUCT} className="item_game_w">
+        <Link to={pathURLHome.INFORMATION_PRODUCT + '/' + item.maSanPham + "/" + Slug(item.tenSanPham)} className="item_game_w">
             <div className="image_game">
                 <img
-                    src="https://cdn.divineshop.vn/image/catalog/Anh/Banner/Spotify%201%20nam.png?hash=1623646056"
+                    src={item.linkHinhAnh}
                     alt=""
                 />
             </div>
@@ -14,15 +14,15 @@ export default function ItemProduct() {
                 <span>Hết hàng</span>
             </div>
             <div className="name_game_product">
-                <p className="text">Far Cry 6 ( Ubisoft ) - Standard Edition</p>
+                <p className="text">{item.tenSanPham}</p>
             </div>
             <div className="price_game">
                 <div className="price_game_ww_q">
                     <p className="price_w1">299.000đ</p>
-                    <p className="price_w2">1.099.000đ</p>
+                    <p className="price_w2">{item.giaSanPham}</p>
                 </div>
                 <div className="sale_game_i">
-                    <span>52%</span>
+                    <span>{item.giamGia}%</span>
                 </div>
             </div>
         </Link>

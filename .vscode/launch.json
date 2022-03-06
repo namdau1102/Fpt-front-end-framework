@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "http://dataProducts",
+            "request": "launch",
+            "url": "http://dataProducts"
+        }
+    ]
+}

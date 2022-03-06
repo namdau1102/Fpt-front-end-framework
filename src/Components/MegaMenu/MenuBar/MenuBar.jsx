@@ -1,48 +1,50 @@
+import { Link } from "react-router-dom";
+
 export default function MenuBar() {
     return (
         <nav className="menu_bar_root">
             <ul className="mega_menu_bar">
                 <li className="item_menu_bar">
-                    <a href="" className="item_link_mn">
+                    <Link to="" className="item_link_mn">
                         <i className="fab fa-xbox color_icon" />
                         <span>Giải trí</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="item_menu_bar">
-                    <a href="" className="item_link_mn">
-                        <i className="fas fa-atlas" />
+                    <Link to="" className="item_link_mn">
+                        <i className="fas fa-atlas color_icon" />
                         <span>Làm việc</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="item_menu_bar">
-                    <a href="" className="item_link_mn">
-                        <i className="fas fa-user-graduate" />
+                    <Link to="" className="item_link_mn">
+                        <i className="fas fa-user-graduate color_icon" />
                         <span>Học tập</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="item_menu_bar">
-                    <a href="" className="item_link_mn">
-                        <i className="fab fa-steam " />
+                    <Link to="" className="item_link_mn">
+                        <i className="fab fa-steam color_icon" />
                         <span>Game Stream</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="item_menu_bar">
-                    <a href="" className="item_link_mn">
-                        <i className="fas fa-gamepad" />
+                    <Link to="" className="item_link_mn">
+                        <i className="fas fa-gamepad color_icon" />
                         <span>Game Origin</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="item_menu_bar">
-                    <a href="" className="item_link_mn">
-                        <i className="fas fa-gamepad" />
+                    <Link to="" className="item_link_mn">
+                        <i className="fas fa-gamepad color_icon" />
                         <span>PUBG</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="item_menu_bar">
-                    <a href="" className="item_link_mn">
+                    <Link to="" className="item_link_mn">
                         <i className="fab fa-xbox color_icon" />
                         <span>Google Play, iTunes</span>
-                    </a>
+                    </Link>
                 </li>
             </ul>
         </nav>

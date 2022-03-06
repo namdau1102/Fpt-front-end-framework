@@ -1,9 +1,9 @@
 import { useEffect } from "react"
-import CartForm from "./CartForm/CartForm"
-import ProductListCart from "./ProductListCart/ProductListCart"
+import CartFormContainer from "../../Containers/CartFormContainer"
+import ProductListCartContainer from "../../Containers/ProductListCartContainer"
 import StatusCart from "./StatusCart/StatusCart"
 
-export default function PageCart() {
+export default function PageCart(props) {
     useEffect(() => {
         document.title = "Giỏ hàng"
     }, [])
@@ -15,14 +15,14 @@ export default function PageCart() {
                     <div className="flex_cart">
                         <div className="flex_cart_left_wq">
                             <h2 className="title_cart">
-                                Giỏ hàng <p>( 1 Sản phẩm )</p>
+                                Giỏ hàng <p>( {props.dataCartUser.cartUser.length} Sản phẩm )</p>
                             </h2>
                             <div className="list_product_cart">
-                                <ProductListCart />
+                                <ProductListCartContainer />
                             </div>
                         </div>
                         <div className="flex_cart_right_wq">
-                            <CartForm />
+                            <CartFormContainer />
                         </div>
                     </div>
                 </div>

@@ -12,6 +12,14 @@
     top: 0;
   }
 }
+@keyframes messageAdminLeft {
+  from {
+    left: 0;
+  }
+  to {
+    left: 15px;
+  }
+}
 @keyframes animatedgradient {
   0% {
     background-position: 0% 50%;
@@ -29,6 +37,14 @@
   }
   to {
     left: 0;
+  }
+}
+@keyframes left-formfixed-close {
+  from {
+    left: 0%;
+  }
+  to {
+    right: calc(-100% - 1.25rem);
   }
 }
 @keyframes focusInputFrom {
@@ -54,5 +70,64 @@
   }
   to {
     margin-left: -300px;
+  }
+}
+@keyframes showFromLogin {
+  from {
+    left: 100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes heightMenuSliderOpen {
+  from {
+    height: 0;
+    display: none;
+  }
+  to {
+    height: 240px;
+    display: block !important;
+  }
+}
+@keyframes heightMenuSliderClose {
+  from {
+    height: auto;
+  }
+  to {
+    height: 0;
+  }
+}
+// CLOSE MENU FORM
+.show-from-login {
+  visibility: visible;
+  animation: showFromLogin ease-in-out 0.8s;
+}
+.close-from-login {
+  display: none;
+  transition: opacity 1.2s;
+  opacity: 0;
+  transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+}
+@keyframes notification-wq {
+  from {
+    right: -500px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes topFormHegith {
+  from {
+    top: -270px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
   }
 }
